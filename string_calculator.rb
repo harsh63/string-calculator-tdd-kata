@@ -6,8 +6,13 @@ class StringCalculator
 
     delimiter = /,|\n/
     if numbers.start_with?("//")
-      delimiter = Regexp.escape(numbers[2])
-      numbers = numbers[4..]
+      if numbers[2] == '['
+        delimiter = Regexp.union(numbers.scan(/\[(.*?)\]/).flatten)
+        numbers = numbers.split("\n", 2).last
+      else
+        delimiter = Regexp.escape(numbers[2])
+        numbers = numbers[4..]
+      end
     end
 
     numbers = numbers.split(/#{delimiter}/).map(&:to_i)
