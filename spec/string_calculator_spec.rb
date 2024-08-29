@@ -37,5 +37,11 @@ RSpec.describe StringCalculator do
     it "returns the sum when numbers are separated by new lines" do
       expect(described_class.add("1\n2,3")).to eq(6)
     end
+
+    it "returns the sum when a custom delimiter is used" do
+      expect(described_class.add("//;\n1;2")).to eq(3)
+      expect(described_class.add("//*\n2*2")).to eq(4)
+      expect(described_class.add("//^\n3^2")).to eq(5)
+    end
   end
 end
