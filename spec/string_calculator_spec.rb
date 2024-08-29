@@ -1,5 +1,4 @@
-class StringCalculator
-end
+require "./string_calculator.rb"
 
 RSpec.describe StringCalculator do
   it "defines the StringCalculator class" do
