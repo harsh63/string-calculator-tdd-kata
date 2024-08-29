@@ -17,5 +17,9 @@ RSpec.describe StringCalculator do
     it "returns 0 when the input is nil" do
       expect(described_class.add(nil)).to eq(0)
     end
+
+    it "returns 0 when the input is empty" do
+      expect(described_class.add("")).to eq(0)
+    end
   end
 end
