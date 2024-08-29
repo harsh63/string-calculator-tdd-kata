@@ -21,5 +21,9 @@ RSpec.describe StringCalculator do
     it "returns 0 when the input is empty" do
       expect(described_class.add("")).to eq(0)
     end
+
+    it "returns the same number when only one input is given" do
+      expect(described_class.add("1")).to eq(1)
+    end
   end
 end
