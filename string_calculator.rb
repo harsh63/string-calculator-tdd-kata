@@ -4,6 +4,7 @@ class StringCalculator
     return 0 if numbers.nil?
     return 0 if numbers.empty?
 
-    numbers.to_i
+    numbers = numbers.split(',').map(&:to_i)
+    numbers.sum
   end
 end
