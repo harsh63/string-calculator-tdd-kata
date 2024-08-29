@@ -8,4 +8,10 @@ RSpec.describe StringCalculator do
   it "has the add method" do
     expect(described_class).to respond_to(:add)
   end
+
+  describe '.add' do
+    it "accepts numbers argument" do
+      expect { described_class.add("123") }.not_to raise_error
+    end
+  end
 end
