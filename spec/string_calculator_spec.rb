@@ -13,5 +13,9 @@ RSpec.describe StringCalculator do
     it "accepts numbers argument" do
       expect { described_class.add("123") }.not_to raise_error
     end
+
+    it "returns 0 when the input is nil" do
+      expect(described_class.add(nil)).to eq(0)
+    end
   end
 end
