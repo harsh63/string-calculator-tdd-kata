@@ -33,5 +33,9 @@ RSpec.describe StringCalculator do
     it 'returns the sum of multiple numbers' do
       expect(described_class.add("1,2,3,4")).to eq(10)
     end
+
+    it "returns the sum when numbers are separated by new lines" do
+      expect(described_class.add("1\n2,3")).to eq(6)
+    end
   end
 end
