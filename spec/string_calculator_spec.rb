@@ -43,5 +43,9 @@ RSpec.describe StringCalculator do
       expect(described_class.add("//*\n2*2")).to eq(4)
       expect(described_class.add("//^\n3^2")).to eq(5)
     end
+
+    it "raises an error when negative numbers are passed" do
+      expect { described_class.add("1,-2,3") }.to raise_error("Negatives not allowed: -2")
+    end
   end
 end
