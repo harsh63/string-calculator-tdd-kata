@@ -1,6 +1,6 @@
 class StringCalculator
 
-  def self.add
+  def self.add(numbers)
 
   end
 end
